@@ -1,0 +1,19 @@
+%h1 Listing albums
+
+%table
+  %tr
+    %th Parent
+    %th Title
+    %th Description
+
+  -for album in @albums
+    %tr
+      %td=h album.parent_id
+      %td=h album.title
+      %td=h album.description
+  
+      %td= link_to 'Show', album_path(album)
+      %td= link_to 'Edit', edit_album_path(album)
+      %td= link_to 'Destroy', album_path(album), :confirm => 'Are you sure?', :method => :delete, :confirm => "Are you sure?", :method => :delete
+    
+= link_to 'New album', new_album_path 

@@ -1,0 +1,15 @@
+%p
+  %b Parent:
+  =h @album.parent_id 
+
+%p
+  %b Title:
+  =h @album.title 
+
+%p
+  %b Description:
+  =h @album.description 
+
+
+= link_to 'Edit', edit_album_path(@album)
+= link_to 'Back', albums_path

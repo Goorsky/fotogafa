@@ -1,0 +1,20 @@
+%h1 Editing album
+
+= error_messages_for :album
+
+- form_for(@album) do |f|
+  %p
+    %b Parent
+    = f.text_field :parent_id 
+  %p
+    %b Title
+    = f.text_field :title 
+  %p
+    %b Description
+    = f.text_area :description 
+    
+  %p= f.submit "Update"
+  
+= link_to 'Show', album_path(@album)
+= link_to 'Back', albums_path
+
