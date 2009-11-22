@@ -42,6 +42,7 @@ class PhotosController < ApplicationController
   # POST /photo.xml
   def create
     @photo = Photo.new(params[:photo])
+    @albums = Album.find(:all)
 
     respond_to do |format|
       if @photo.save
