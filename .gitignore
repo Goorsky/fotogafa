@@ -1,3 +1,4 @@
 config/database.yml
 public/images/photos/*
 log/*.log
+.DS_Store
