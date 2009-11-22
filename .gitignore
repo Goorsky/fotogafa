@@ -2,3 +2,5 @@ config/database.yml
 public/images/photos/*
 log/*.log
 .DS_Store
+db/schema.rb
+db/development.sqlite3
