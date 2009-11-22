@@ -11,7 +11,7 @@
   =h @photo.user_id
 
 %p
-  = image_tag formatted_photo_path(@photo, :png)
+  = image_tag photo_path(@photo, :png)
 
 
 = link_to 'Edit', edit_photo_path(@photo)
