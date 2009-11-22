@@ -759,3 +759,10 @@ Processing PhotosController#show to png (for 127.0.0.1 at 2009-11-22 19:01:08) [
   Parameters: {"id"=>"3"}
   [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
 Completed in 9ms (View: 1, DB: 1) | 406 Not Acceptable [http://localhost/photos/3.png]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 20:51:34) [GET]
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Rendering photos/index
+  [4;35;1mAlbum Load (1.0ms)[0m   [0mSELECT * FROM "albums" WHERE ("albums"."id" = 1) [0m
+Completed in 4304ms (View: 4295, DB: 1) | 200 OK [http://localhost/photos]
