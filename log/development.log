@@ -384,6 +384,7 @@ Processing AlbumsController#index (for 127.0.0.1 at 2009-11-21 18:58:49) [GET]
 Rendering albums/index
   [4;35;1mAlbum Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
 Completed in 8ms (View: 3, DB: 2) | 200 OK [http://localhost/albums]
+<<<<<<< HEAD
   [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
   [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
   [4;36;1mSQL (19.1ms)[0m   [0;1mSHOW TABLES[0m
@@ -802,3 +803,387 @@ Processing PhotosController#new (for 127.0.0.1 at 2009-11-22 21:36:52) [GET]
 Rendering photos/new
   [4;35;1mAlbum Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
 Completed in 54ms (View: 44, DB: 5) | 200 OK [http://localhost/photos/new]
+=======
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (129.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (66.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAlbums (20091121175007)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCREATE TABLE "albums" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "parent_id" integer, "user_id" integer, "title" varchar(255), "description" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091121175007')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("albums")[0m
+
+
+Processing AlbumsController#index (for 127.0.0.1 at 2009-11-21 19:47:19) [GET]
+  [4;36;1mAlbum Load (1.0ms)[0m   [0;1mSELECT * FROM "albums" [0m
+Rendering albums/index
+Completed in 50ms (View: 26, DB: 1) | 200 OK [http://localhost/albums]
+
+
+Processing AlbumsController#index (for 127.0.0.1 at 2009-11-22 18:30:40) [GET]
+  [4;36;1mAlbum Load (1.0ms)[0m   [0;1mSELECT * FROM "albums" [0m
+Rendering albums/index
+Completed in 111ms (View: 29, DB: 1) | 200 OK [http://localhost/albums]
+
+
+Processing AlbumsController#new (for 127.0.0.1 at 2009-11-22 18:30:55) [GET]
+Rendering albums/new
+Completed in 4339ms (View: 4332, DB: 0) | 200 OK [http://localhost/albums/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAlbums (20091121175007)
+Migrating to CreatePhotos (20091122171408)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "album_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091122171408')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("albums")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("photos")[0m
+
+
+Processing AlbumsController#index (for 127.0.0.1 at 2009-11-22 18:32:26) [GET]
+  [4;36;1mAlbum Load (0.0ms)[0m   [0;1mSELECT * FROM "albums" [0m
+Rendering albums/index
+Completed in 63ms (View: 7, DB: 0) | 200 OK [http://localhost/albums]
+
+
+Processing AlbumsController#new (for 127.0.0.1 at 2009-11-22 18:32:29) [GET]
+Rendering albums/new
+Completed in 112ms (View: 105, DB: 0) | 200 OK [http://localhost/albums/new]
+
+
+Processing AlbumsController#create (for 127.0.0.1 at 2009-11-22 18:32:40) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"P920IdLUuQjm81RjJ2CAawReHapM5Ai8qg4h3+SddDI=", "album"=>{"title"=>"Album", "description"=>"Taki se album", "parent_id"=>""}}
+  [4;35;1mAlbum Create (1.0ms)[0m   [0mINSERT INTO "albums" ("updated_at", "title", "description", "user_id", "parent_id", "created_at") VALUES('2009-11-22 17:32:40', 'Album', 'Taki se album', NULL, NULL, '2009-11-22 17:32:40')[0m
+Redirected to http://localhost:3000/albums/1
+Completed in 82ms (DB: 1) | 302 Found [http://localhost/albums]
+
+
+Processing AlbumsController#show (for 127.0.0.1 at 2009-11-22 18:32:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAlbum Load (0.0ms)[0m   [0;1mSELECT * FROM "albums" WHERE ("albums"."id" = 1) [0m
+Rendering albums/show
+Completed in 37ms (View: 30, DB: 0) | 200 OK [http://localhost/albums/1]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 18:32:48) [GET]
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM "photos" [0m
+Rendering photos/index
+Completed in 54ms (View: 26, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-11-22 18:32:51) [GET]
+Rendering photos/new
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/photos/new]
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-11-22 18:33:20) [POST]
+  Parameters: {"photo"=>{"title"=>"Fota", "album_id"=>"1", "user_id"=>"1"}, "commit"=>"Create", "authenticity_token"=>"P920IdLUuQjm81RjJ2CAawReHapM5Ai8qg4h3+SddDI="}
+Rendering photos/new
+Completed in 20ms (View: 6, DB: 0) | 200 OK [http://localhost/photos]
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-11-22 18:34:03) [POST]
+  Parameters: {"photo"=>{"title"=>"Fota", "album_id"=>"1", "user_id"=>"1"}, "commit"=>"Create", "authenticity_token"=>"P920IdLUuQjm81RjJ2CAawReHapM5Ai8qg4h3+SddDI="}
+  [4;36;1mPhoto Create (1.0ms)[0m   [0;1mINSERT INTO "photos" ("updated_at", "title", "album_id", "user_id", "created_at") VALUES('2009-11-22 17:34:03', 'Fota', 1, 1, '2009-11-22 17:34:03')[0m
+Redirected to http://localhost:3000/photos/1
+Completed in 87ms (DB: 1) | 302 Found [http://localhost/photos]
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2009-11-22 18:34:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 1) [0m
+Rendering photos/show
+Completed in 33ms (View: 25, DB: 0) | 200 OK [http://localhost/photos/1]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 18:34:22) [GET]
+  [4;36;1mPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Rendering photos/index
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-11-22 18:37:37) [GET]
+  [4;35;1mAlbum Load (0.0ms)[0m   [0mSELECT * FROM "albums" [0m
+Rendering photos/new
+Completed in 27ms (View: 15, DB: 0) | 200 OK [http://localhost/photos/new]
+
+
+Processing PhotosController#index to xml (for 127.0.0.1 at 2009-11-22 18:40:22) [GET]
+  [4;36;1mPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Completed in 307ms (View: 300, DB: 1) | 200 OK [http://localhost/photos.xml]
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-11-22 18:42:23) [POST]
+  Parameters: {"photo"=>{"title"=>"Inna fota", "album_id"=>"1", "user_id"=>"1"}, "commit"=>"Create", "authenticity_token"=>"P920IdLUuQjm81RjJ2CAawReHapM5Ai8qg4h3+SddDI="}
+  [4;35;1mPhoto Create (1.0ms)[0m   [0mINSERT INTO "photos" ("updated_at", "title", "album_id", "user_id", "created_at") VALUES('2009-11-22 17:42:23', 'Inna fota', 1, 1, '2009-11-22 17:42:23')[0m
+Redirected to http://localhost:3000/photos/2
+Completed in 78ms (DB: 1) | 302 Found [http://localhost/photos]
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2009-11-22 18:42:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 2) [0m
+Rendering photos/show
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/photos/2]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 18:42:27) [GET]
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM "photos" [0m
+Rendering photos/index
+  [4;36;1mAlbum Load (0.0ms)[0m   [0;1mSELECT * FROM "albums" WHERE ("albums"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "albums" WHERE ("albums"."id" = 1) [0m
+Completed in 72ms (View: 17, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing PhotosController#destroy (for 127.0.0.1 at 2009-11-22 18:51:32) [DELETE]
+  Parameters: {"authenticity_token"=>"P920IdLUuQjm81RjJ2CAawReHapM5Ai8qg4h3+SddDI=", "id"=>"1"}
+  [4;36;1mPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 1) [0m
+  [4;35;1mPhoto Destroy (1.0ms)[0m   [0mDELETE FROM "photos" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/photos
+Completed in 86ms (DB: 2) | 302 Found [http://localhost/photos/1]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 18:51:33) [GET]
+  [4;36;1mPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Rendering photos/index
+  [4;35;1mAlbum Load (0.0ms)[0m   [0mSELECT * FROM "albums" WHERE ("albums"."id" = 1) [0m
+Completed in 18ms (View: 10, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing PhotosController#destroy (for 127.0.0.1 at 2009-11-22 18:51:36) [DELETE]
+  Parameters: {"authenticity_token"=>"P920IdLUuQjm81RjJ2CAawReHapM5Ai8qg4h3+SddDI=", "id"=>"2"}
+  [4;36;1mPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 2) [0m
+  [4;35;1mPhoto Destroy (0.0ms)[0m   [0mDELETE FROM "photos" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/photos
+Completed in 69ms (DB: 1) | 302 Found [http://localhost/photos/2]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 18:51:37) [GET]
+  [4;36;1mPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Rendering photos/index
+Completed in 9ms (View: 1, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-11-22 18:51:39) [GET]
+  [4;35;1mAlbum Load (0.0ms)[0m   [0mSELECT * FROM "albums" [0m
+Rendering photos/new
+
+ActionView::TemplateError (Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.) on line #18 of app/views/photos/new.haml:
+15:     %b User
+16:     %br
+17:     = f.text_field :user_id
+18: 	%p
+19: 		%b Upload
+20: 		%br
+21: 		= f.file_field :image_file
+
+    app/views/photos/new.haml:18
+    haml (2.2.13) lib/haml/precompiler.rb:150:in `tabs'
+    haml (2.2.13) lib/haml/precompiler.rb:132:in `instance_eval'
+    haml (2.2.13) lib/haml/precompiler.rb:132:in `tabs'
+    haml (2.2.13) lib/haml/precompiler.rb:980:in `block_opened?'
+    haml (2.2.13) lib/haml/precompiler.rb:369:in `push_script'
+    haml (2.2.13) lib/haml/precompiler.rb:223:in `process_line'
+    haml (2.2.13) lib/haml/precompiler.rb:177:in `precompile'
+    haml (2.2.13) lib/haml/engine.rb:114:in `initialize'
+    haml (2.2.13) lib/haml/template/plugin.rb:21:in `new'
+    haml (2.2.13) lib/haml/template/plugin.rb:21:in `compile'
+    haml (2.2.13) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/photos_controller.rb:30:in `new'
+    haml (2.2.13) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (58.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-11-22 18:52:48) [GET]
+  [4;36;1mAlbum Load (0.0ms)[0m   [0;1mSELECT * FROM "albums" [0m
+Rendering photos/new
+
+ActionView::TemplateError (Inconsistent indentation: 1 tab was used for indentation, but the rest of the document was indented using 2 spaces.) on line #18 of app/views/photos/new.haml:
+15:     %b User
+16:     %br
+17:     = f.text_field :user_id
+18: 	%p
+19:     %b Upload
+20:     %br
+21:     = f.file_field :image_file
+
+    app/views/photos/new.haml:18
+    haml (2.2.13) lib/haml/precompiler.rb:150:in `tabs'
+    haml (2.2.13) lib/haml/precompiler.rb:132:in `instance_eval'
+    haml (2.2.13) lib/haml/precompiler.rb:132:in `tabs'
+    haml (2.2.13) lib/haml/precompiler.rb:980:in `block_opened?'
+    haml (2.2.13) lib/haml/precompiler.rb:369:in `push_script'
+    haml (2.2.13) lib/haml/precompiler.rb:223:in `process_line'
+    haml (2.2.13) lib/haml/precompiler.rb:177:in `precompile'
+    haml (2.2.13) lib/haml/engine.rb:114:in `initialize'
+    haml (2.2.13) lib/haml/template/plugin.rb:21:in `new'
+    haml (2.2.13) lib/haml/template/plugin.rb:21:in `compile'
+    haml (2.2.13) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/photos_controller.rb:30:in `new'
+    haml (2.2.13) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (56.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-11-22 18:53:03) [GET]
+  [4;35;1mAlbum Load (0.0ms)[0m   [0mSELECT * FROM "albums" [0m
+Rendering photos/new
+Completed in 28ms (View: 15, DB: 0) | 200 OK [http://localhost/photos/new]
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-11-22 18:53:20) [POST]
+  Parameters: {"photo"=>{"image_file"=>#<File:C:/Users/Rafal/AppData/Local/Temp/RackMultipart.5204.0>, "title"=>"Test", "album_id"=>"1", "image_file_url"=>"", "user_id"=>"1"}, "commit"=>"Create", "authenticity_token"=>"P920IdLUuQjm81RjJ2CAawReHapM5Ai8qg4h3+SddDI="}
+  [4;36;1mPhoto Create (1.0ms)[0m   [0;1mINSERT INTO "photos" ("updated_at", "title", "album_id", "user_id", "created_at") VALUES('2009-11-22 17:53:20', 'Test', 1, 1, '2009-11-22 17:53:20')[0m
+Redirected to http://localhost:3000/photos/3
+Completed in 336ms (DB: 1) | 302 Found [http://localhost/photos]
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2009-11-22 18:53:21) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Rendering photos/show
+  [4;36;1mAlbum Load (1.0ms)[0m   [0;1mSELECT * FROM "albums" WHERE ("albums"."id" = 1) [0m
+DEPRECATION WARNING: formatted_photo_path() has been deprecated. Please pass format to the standard photo_path method instead.. (called from _run_haml_app47views47photos47show46haml at C:/rails/fotogafa/app/views/photos/show.haml:14)
+Completed in 24ms (View: 14, DB: 1) | 200 OK [http://localhost/photos/3]
+
+
+Processing PhotosController#show to jpg (for 127.0.0.1 at 2009-11-22 18:53:22) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Completed in 10ms (View: 1, DB: 0) | 406 Not Acceptable [http://localhost/photos/3.jpg]
+
+
+Processing PhotosController#show to jpg (for 127.0.0.1 at 2009-11-22 18:53:28) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Completed in 10ms (View: 2, DB: 0) | 406 Not Acceptable [http://localhost/photos/3.jpg]
+
+
+Processing PhotosController#show to png (for 127.0.0.1 at 2009-11-22 18:53:48) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Completed in 10ms (View: 1, DB: 0) | 406 Not Acceptable [http://localhost/photos/3.png]
+
+
+Processing PhotosController#show to jpg (for 127.0.0.1 at 2009-11-22 18:53:57) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Completed in 9ms (View: 1, DB: 0) | 406 Not Acceptable [http://localhost/photos/3.jpg]
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2009-11-22 18:56:07) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Rendering photos/show
+  [4;36;1mAlbum Load (0.0ms)[0m   [0;1mSELECT * FROM "albums" WHERE ("albums"."id" = 1) [0m
+DEPRECATION WARNING: formatted_photo_path() has been deprecated. Please pass format to the standard photo_path method instead.. (called from _run_haml_app47views47photos47show46haml at C:/rails/fotogafa/app/views/photos/show.haml:14)
+Completed in 23ms (View: 15, DB: 1) | 200 OK [http://localhost/photos/3]
+
+
+Processing PhotosController#show to jpg (for 127.0.0.1 at 2009-11-22 18:56:08) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Completed in 9ms (View: 1, DB: 0) | 406 Not Acceptable [http://localhost/photos/3.jpg]
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2009-11-22 18:57:24) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Rendering photos/show
+  [4;35;1mAlbum Load (0.0ms)[0m   [0mSELECT * FROM "albums" WHERE ("albums"."id" = 1) [0m
+DEPRECATION WARNING: formatted_photo_path() has been deprecated. Please pass format to the standard photo_path method instead.. (called from _run_haml_app47views47photos47show46haml at C:/rails/fotogafa/app/views/photos/show.haml:14)
+Completed in 142ms (View: 112, DB: 0) | 200 OK [http://localhost/photos/3]
+
+
+Processing PhotosController#show to jpg (for 127.0.0.1 at 2009-11-22 18:57:25) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Completed in 10ms (View: 1, DB: 0) | 406 Not Acceptable [http://localhost/photos/3.jpg]
+
+
+Processing PhotosController#show to jpg (for 127.0.0.1 at 2009-11-22 18:57:29) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Completed in 10ms (View: 1, DB: 0) | 406 Not Acceptable [http://localhost/photos/3.jpg]
+
+
+Processing PhotosController#show to png (for 127.0.0.1 at 2009-11-22 18:59:37) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Completed in 13ms (View: 5, DB: 0) | 406 Not Acceptable [http://localhost/photos/3.png]
+
+
+Processing PhotosController#show to png (for 127.0.0.1 at 2009-11-22 18:59:40) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Completed in 10ms (View: 2, DB: 0) | 406 Not Acceptable [http://localhost/photos/3.png]
+
+
+Processing PhotosController#show to png (for 127.0.0.1 at 2009-11-22 19:00:32) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Completed in 35ms (View: 6, DB: 0) | 406 Not Acceptable [http://localhost/photos/3.png]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 19:01:03) [GET]
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM "photos" [0m
+Rendering photos/index
+  [4;36;1mAlbum Load (0.0ms)[0m   [0;1mSELECT * FROM "albums" WHERE ("albums"."id" = 1) [0m
+Completed in 108ms (View: 101, DB: 1) | 200 OK [http://localhost/photos]
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2009-11-22 19:01:07) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPhoto Load (0.0ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Rendering photos/show
+  [4;36;1mAlbum Load (0.0ms)[0m   [0;1mSELECT * FROM "albums" WHERE ("albums"."id" = 1) [0m
+DEPRECATION WARNING: formatted_photo_path() has been deprecated. Please pass format to the standard photo_path method instead.. (called from _run_haml_app47views47photos47show46haml at C:/rails/fotogafa/app/views/photos/show.haml:14)
+Completed in 24ms (View: 16, DB: 0) | 200 OK [http://localhost/photos/3]
+
+
+Processing PhotosController#show to png (for 127.0.0.1 at 2009-11-22 19:01:08) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM "photos" WHERE ("photos"."id" = 3) [0m
+Completed in 9ms (View: 1, DB: 1) | 406 Not Acceptable [http://localhost/photos/3.png]
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 20:51:34) [GET]
+  [4;36;1mPhoto Load (0.0ms)[0m   [0;1mSELECT * FROM "photos" [0m
+Rendering photos/index
+  [4;35;1mAlbum Load (1.0ms)[0m   [0mSELECT * FROM "albums" WHERE ("albums"."id" = 1) [0m
+Completed in 4304ms (View: 4295, DB: 1) | 200 OK [http://localhost/photos]
+>>>>>>> f65b6d420366d70bf512608e9e0221f0da4f4cba
