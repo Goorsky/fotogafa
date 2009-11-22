@@ -384,3 +384,421 @@ Processing AlbumsController#index (for 127.0.0.1 at 2009-11-21 18:58:49) [GET]
 Rendering albums/index
   [4;35;1mAlbum Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
 Completed in 8ms (View: 3, DB: 2) | 200 OK [http://localhost/albums]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (19.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAlbums (20091121175007)
+Migrating to CreatePhotos (20091122171408)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `albums`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `albums`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (13.8ms)[0m   [0mdescribe `photos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `photos`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#index (for 127.0.0.1 at 2009-11-22 21:21:54) [GET]
+  [4;36;1mAlbum Load (0.5ms)[0m   [0;1mSELECT * FROM `albums` [0m
+Rendering albums/index
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/albums]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#new (for 127.0.0.1 at 2009-11-22 21:21:55) [GET]
+  [4;35;1mAlbum Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+Rendering albums/new
+Completed in 49ms (View: 44, DB: 1) | 200 OK [http://localhost/albums/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 21:21:59) [GET]
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering photos/index
+
+ActionView::TemplateError (undefined local variable or method `new_photo_path' for #<ActionView::Base:0x23c7f38>) on line #19 of app/views/photos/index.haml:
+16:       %td= link_to 'Edit', edit_photo_path(photo)
+17:       %td= link_to 'Destroy', photo_path(photo), :confirm => 'Are you sure?', :method => :delete, :confirm => "Are you sure?", :method => :delete
+18: 
+19: = link_to 'New photo', new_photo_path
+
+    app/views/photos/index.haml:19:in `_run_haml_app47views47photos47index46haml'
+    haml (2.2.13) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/photos_controller.rb:7:in `index'
+    haml (2.2.13) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (107.7ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 21:22:03) [GET]
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering photos/index
+
+ActionView::TemplateError (undefined local variable or method `new_photo_path' for #<ActionView::Base:0x25d11d0>) on line #19 of app/views/photos/index.haml:
+16:       %td= link_to 'Edit', edit_photo_path(photo)
+17:       %td= link_to 'Destroy', photo_path(photo), :confirm => 'Are you sure?', :method => :delete, :confirm => "Are you sure?", :method => :delete
+18: 
+19: = link_to 'New photo', new_photo_path
+
+    app/views/photos/index.haml:19:in `_run_haml_app47views47photos47index46haml'
+    haml (2.2.13) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/photos_controller.rb:7:in `index'
+    haml (2.2.13) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (37.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 21:22:50) [GET]
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering photos/index
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-11-22 21:22:54) [GET]
+  [4;35;1mPhoto Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mAlbum Load (0.2ms)[0m   [0;1mSELECT * FROM `albums` [0m
+Rendering photos/new
+
+ActionView::TemplateError (undefined method `photos_path' for #<ActionView::Base:0x233af48>) on line #5 of app/views/photos/new.haml:
+2: 
+3: = error_messages_for :photo
+4: 
+5: - form_for @photo, :html => { :multipart => true } do |f|
+6:   %p
+7:     %b Title
+8:     %br
+
+    haml (2.2.13) lib/haml/helpers/action_view_mods.rb:170:in `form_for'
+    app/views/photos/new.haml:5:in `_run_haml_app47views47photos47new46haml'
+    haml (2.2.13) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/photos_controller.rb:30:in `new'
+    haml (2.2.13) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (61.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 21:22:59) [GET]
+  [4;35;1mPhoto Load (2.1ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering photos/index
+Completed in 10ms (View: 1, DB: 2) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 21:23:18) [GET]
+  [4;36;1mPhoto Load (0.4ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering photos/index
+
+ActionView::TemplateError (undefined local variable or method `new_photos_path' for #<ActionView::Base:0x2440ff0>) on line #19 of app/views/photos/index.haml:
+16:       %td= link_to 'Edit', edit_photo_path(photo)
+17:       %td= link_to 'Destroy', photo_path(photo), :confirm => 'Are you sure?', :method => :delete, :confirm => "Are you sure?", :method => :delete
+18: 
+19: = link_to 'New photo', new_photos_path
+
+    app/views/photos/index.haml:19:in `_run_haml_app47views47photos47index46haml'
+    haml (2.2.13) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/photos_controller.rb:7:in `index'
+    haml (2.2.13) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (40.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 21:26:15) [GET]
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering photos/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-11-22 21:26:17) [GET]
+  [4;36;1mPhoto Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mAlbum Load (0.2ms)[0m   [0mSELECT * FROM `albums` [0m
+Rendering photos/new
+Completed in 13ms (View: 4, DB: 2) | 200 OK [http://localhost/photos/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#index (for 127.0.0.1 at 2009-11-22 21:28:18) [GET]
+  [4;36;1mAlbum Load (0.3ms)[0m   [0;1mSELECT * FROM `albums` [0m
+Rendering albums/index
+Completed in 5ms (View: 1, DB: 1) | 200 OK [http://localhost/albums]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#index (for 127.0.0.1 at 2009-11-22 21:30:48) [GET]
+  [4;35;1mAlbum Load (19.7ms)[0m   [0mSELECT * FROM `albums` [0m
+Rendering albums/index
+Completed in 26ms (View: 3, DB: 20) | 200 OK [http://localhost/albums]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#new (for 127.0.0.1 at 2009-11-22 21:30:50) [GET]
+  [4;36;1mAlbum Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+Rendering albums/new
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/albums/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#create (for 127.0.0.1 at 2009-11-22 21:30:57) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"owN8k2rFf8EiqsmKyZShqWOxt07l+esPvPgTgVZt/tA=", "album"=>{"title"=>"Mama", "description"=>"Siemka", "parent_id"=>"0"}}
+  [4;35;1mAlbum Columns (19.7ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mSQL (22.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mAlbum Create (53.4ms)[0m   [0mINSERT INTO `albums` (`updated_at`, `title`, `description`, `user_id`, `parent_id`, `created_at`) VALUES('2009-11-22 20:30:57', 'Mama', 'Siemka', NULL, 0, '2009-11-22 20:30:57')[0m
+  [4;36;1mSQL (45.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/albums/1
+Completed in 149ms (DB: 141) | 302 Found [http://localhost/albums]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#show (for 127.0.0.1 at 2009-11-22 21:30:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAlbum Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (77.1ms)[0m   [0;1mSELECT * FROM `albums` WHERE (`albums`.`id` = 1) [0m
+Rendering albums/show
+Completed in 90ms (View: 7, DB: 79) | 200 OK [http://localhost/albums/1]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#index (for 127.0.0.1 at 2009-11-22 21:30:59) [GET]
+  [4;35;1mAlbum Load (0.3ms)[0m   [0mSELECT * FROM `albums` [0m
+Rendering albums/index
+  [4;36;1mAlbum Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+Completed in 8ms (View: 3, DB: 2) | 200 OK [http://localhost/albums]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 21:31:03) [GET]
+  [4;35;1mPhoto Load (0.4ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering photos/index
+Completed in 6ms (View: 1, DB: 1) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-11-22 21:31:05) [GET]
+  [4;36;1mPhoto Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mAlbum Load (0.8ms)[0m   [0mSELECT * FROM `albums` [0m
+Rendering photos/new
+  [4;36;1mAlbum Columns (18.7ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+Completed in 34ms (View: 6, DB: 21) | 200 OK [http://localhost/photos/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 21:33:20) [GET]
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering photos/index
+Completed in 6ms (View: 1, DB: 1) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 21:33:26) [GET]
+  [4;36;1mPhoto Load (0.3ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering photos/index
+Completed in 7ms (View: 1, DB: 1) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#index (for 127.0.0.1 at 2009-11-22 21:33:33) [GET]
+  [4;35;1mAlbum Load (0.3ms)[0m   [0mSELECT * FROM `albums` [0m
+Rendering albums/index
+  [4;36;1mAlbum Columns (7.9ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+Completed in 16ms (View: 3, DB: 8) | 200 OK [http://localhost/albums]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#edit (for 127.0.0.1 at 2009-11-22 21:33:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAlbum Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.7ms)[0m   [0;1mSELECT * FROM `albums` WHERE (`albums`.`id` = 1) [0m
+Rendering albums/edit
+Completed in 17ms (View: 11, DB: 2) | 200 OK [http://localhost/albums/1/edit]
+  [4;35;1mSQL (0.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#index (for 127.0.0.1 at 2009-11-22 21:33:37) [GET]
+  [4;35;1mAlbum Load (0.3ms)[0m   [0mSELECT * FROM `albums` [0m
+Rendering albums/index
+  [4;36;1mAlbum Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+Completed in 9ms (View: 4, DB: 2) | 200 OK [http://localhost/albums]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#new (for 127.0.0.1 at 2009-11-22 21:33:39) [GET]
+  [4;35;1mAlbum Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+Rendering albums/new
+Completed in 11ms (View: 5, DB: 2) | 200 OK [http://localhost/albums/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#index (for 127.0.0.1 at 2009-11-22 21:33:42) [GET]
+  [4;36;1mAlbum Load (0.3ms)[0m   [0;1mSELECT * FROM `albums` [0m
+Rendering albums/index
+  [4;35;1mAlbum Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+Completed in 9ms (View: 3, DB: 2) | 200 OK [http://localhost/albums]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#new (for 127.0.0.1 at 2009-11-22 21:34:09) [GET]
+  [4;36;1mAlbum Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+Rendering albums/new
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/albums/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#index (for 127.0.0.1 at 2009-11-22 21:34:13) [GET]
+  [4;35;1mAlbum Load (0.5ms)[0m   [0mSELECT * FROM `albums` [0m
+Rendering albums/index
+  [4;36;1mAlbum Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+Completed in 8ms (View: 3, DB: 2) | 200 OK [http://localhost/albums]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#edit (for 127.0.0.1 at 2009-11-22 21:34:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAlbum Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+  [4;36;1mAlbum Load (0.3ms)[0m   [0;1mSELECT * FROM `albums` WHERE (`albums`.`id` = 1) [0m
+Rendering albums/edit
+Completed in 10ms (View: 4, DB: 2) | 200 OK [http://localhost/albums/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AlbumsController#index (for 127.0.0.1 at 2009-11-22 21:34:18) [GET]
+  [4;35;1mAlbum Load (0.4ms)[0m   [0mSELECT * FROM `albums` [0m
+Rendering albums/index
+  [4;36;1mAlbum Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+Completed in 9ms (View: 3, DB: 2) | 200 OK [http://localhost/albums]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 21:34:24) [GET]
+  [4;35;1mPhoto Load (0.3ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering photos/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-11-22 21:34:26) [GET]
+  [4;36;1mPhoto Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mAlbum Load (12.9ms)[0m   [0mSELECT * FROM `albums` [0m
+Rendering photos/new
+  [4;36;1mAlbum Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `albums`[0m
+Completed in 34ms (View: 7, DB: 20) | 200 OK [http://localhost/photos/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-11-22 21:34:37) [POST]
+  Parameters: {"photo"=>{"title"=>"", "album_id"=>"1", "image_file_url"=>"", "user_id"=>""}, "commit"=>"Create", "authenticity_token"=>"owN8k2rFf8EiqsmKyZShqWOxt07l+esPvPgTgVZt/tA="}
+  [4;35;1mPhoto Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (19.3ms)[0m   [0mROLLBACK[0m
+Rendering photos/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.collect) on line #13 of app/views/photos/new.haml:
+10:   %p
+11:     %b Album
+12:     %br
+13:     = f.select :album_id, @albums.collect { |c| [c.title, c.id] }
+14:   %p
+15:     %b User
+16:     %br
+
+    app/views/photos/new.haml:13:in `_run_haml_app47views47photos47new46haml'
+    haml (2.2.13) lib/haml/helpers/action_view_mods.rb:164:in `call'
+    haml (2.2.13) lib/haml/helpers/action_view_mods.rb:164:in `form_for'
+    haml (2.2.13) lib/haml/helpers.rb:543:in `call'
+    haml (2.2.13) lib/haml/helpers.rb:543:in `haml_bind_proc'
+    haml (2.2.13) lib/haml/helpers/action_view_mods.rb:170:in `form_for'
+    app/views/photos/new.haml:5:in `_run_haml_app47views47photos47new46haml'
+    haml (2.2.13) lib/haml/helpers/action_view_mods.rb:13:in `render'
+    app/controllers/photos_controller.rb:52:in `create'
+    app/controllers/photos_controller.rb:46:in `create'
+    haml (2.2.13) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (42.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 21:35:38) [GET]
+  [4;36;1mPhoto Load (2.6ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering photos/index
+Completed in 9ms (View: 1, DB: 3) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-11-22 21:35:41) [GET]
+  [4;35;1mPhoto Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mAlbum Load (0.3ms)[0m   [0;1mSELECT * FROM `albums` [0m
+Rendering photos/new
+  [4;35;1mAlbum Columns (16.8ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+Completed in 32ms (View: 6, DB: 19) | 200 OK [http://localhost/photos/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-11-22 21:36:45) [GET]
+  [4;36;1mPhoto Load (0.5ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering photos/index
+Completed in 45ms (View: 9, DB: 1) | 200 OK [http://localhost/photos/]
+  [4;35;1mSQL (1.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-11-22 21:36:52) [GET]
+  [4;35;1mPhoto Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mAlbum Load (0.7ms)[0m   [0;1mSELECT * FROM `albums` [0m
+Rendering photos/new
+  [4;35;1mAlbum Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `albums`[0m
+Completed in 54ms (View: 44, DB: 5) | 200 OK [http://localhost/photos/new]
