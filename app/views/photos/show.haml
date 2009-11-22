@@ -1,0 +1,18 @@
+%p
+  %b Title:
+  =h @photo.title
+
+%p
+  %b Album:
+  =h @photo.album.title
+
+%p
+  %b User:
+  =h @photo.user_id
+
+%p
+  = image_tag formatted_photo_path(@photo, :png)
+
+
+= link_to 'Edit', edit_photo_path(@photo)
+= link_to 'Back', photos_path

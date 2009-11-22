@@ -1,0 +1,19 @@
+%h1 Listing photos
+
+%table
+  %tr
+    %th Title
+    %th Album
+    %th User
+
+  -for photo in @photos
+    %tr
+      %td=h photo.title
+      %td=h photo.album.title
+      %td=h photo.user_id
+
+      %td= link_to 'Show', photo_path(photo)
+      %td= link_to 'Edit', edit_photo_path(photo)
+      %td= link_to 'Destroy', photo_path(photo), :confirm => 'Are you sure?', :method => :delete, :confirm => "Are you sure?", :method => :delete
+
+= link_to 'New photo', new_photo_path

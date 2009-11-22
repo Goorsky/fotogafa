@@ -1,0 +1,20 @@
+%h1 Editing photo
+
+= error_messages_for :photo
+
+- form_for(@photo) do |f|
+  %p
+    %b Title
+    = f.text_field :title 
+  %p
+    %b Album
+    = f.text_field :album_id 
+  %p
+    %b User
+    = f.text_field :user_id 
+    
+  %p= f.submit "Update"
+  
+= link_to 'Show', photo_path(@photo)
+= link_to 'Back', photos_path
+
