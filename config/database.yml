@@ -1,11 +1,7 @@
 # mysql 
 development:
-  adapter: mysql
-  encoding: utf8
-  database: fotogafa_development
-  username: root
-  password: duppa
-  host: localhost
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
   timeout: 5000
 
