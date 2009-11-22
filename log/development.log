@@ -1187,3 +1187,22 @@ Rendering photos/index
   [4;35;1mAlbum Load (1.0ms)[0m   [0mSELECT * FROM "albums" WHERE ("albums"."id" = 1) [0m
 Completed in 4304ms (View: 4295, DB: 1) | 200 OK [http://localhost/photos]
 >>>>>>> f65b6d420366d70bf512608e9e0221f0da4f4cba
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAlbums (20091121175007)
+Migrating to CreatePhotos (20091122171408)
+  [4;36;1mSQL (7.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("albums")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("photos")[0m
