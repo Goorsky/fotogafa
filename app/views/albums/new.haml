@@ -1,22 +1,22 @@
-%h1 New album
+%h1 Dodaj album
 
 = error_messages_for :album 
 
 - form_for(@album) do |f| 
   %p
-    %b Parent
+    %b Rodzic
     %br
     = f.text_field :parent_id 
   %p
-    %b Title
+    %b Nazwa
     %br
     = f.text_field :title 
   %p
-    %b Description
+    %b Opis
     %br
     = f.text_area :description 
 
   %p
-    = f.submit "Create"
+    = f.submit "Stwórz"
     
-= link_to 'Back', albums_path 
+= link_to 'lista albumów', albums_path 
