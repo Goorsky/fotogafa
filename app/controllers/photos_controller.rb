@@ -39,20 +39,24 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
   end
 
-  # POST /photo
-  # POST /photo.xml
   def create
-    @photo = Photo.new(params[:photo])
-    @albums = Album.find(:all)
-
-    respond_to do |format|
+    @albums = Album.find(:all) 
+    # SWFUpload file
+    if params[:Filedata]
+      @photo = Photo.new(:swfupload_file => params[:Filedata])
       if @photo.save
-        flash[:notice] = 'Photo was successfully created.'
-        format.html { redirect_to(photo_path(@photo)) }
-        format.xml  { render :xml => @photo, :status => :created, :location => @photo }
+        render :partial => 'photo', :object => @photo
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @photo.errors, :status => :unprocessable_entity }
+        render :text => "error"
+      end
+    else
+      # Standard upload
+      @photo = Photo.new params[:photo]
+      if @photo.save
+        flash[:notice] = 'Your photo has been uploaded!'
+        redirect_to photos_path
+      else
+        render :action => :new
       end
     end
   end
