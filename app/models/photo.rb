@@ -5,7 +5,9 @@ class Photo < ActiveRecord::Base
   #fix mime-types
   def swfupload_file=(data)
     data.content_type = MIME::Types.type_for(data.original_filename).to_s
-    self.file = data
+    self.image_file = data
+    self.title = "dodane z SWFupload"
+    self.album_id = 1
   end
   
 end

@@ -1,4 +1,7 @@
 class PhotosController < ApplicationController
+
+protect_from_forgery :except => :create
+
   # GET /photo
   # GET /photo.xml
   def index
@@ -7,6 +10,7 @@ class PhotosController < ApplicationController
     respond_to do |format|
       format.html # index.haml
       format.xml  { render :xml => @photos }
+      format.png
     end
   end
 
@@ -44,10 +48,12 @@ class PhotosController < ApplicationController
     # SWFUpload file
     if params[:Filedata]
       @photo = Photo.new(:swfupload_file => params[:Filedata])
+      #@photo = Photo.new
+      #@photo.image_file = params[:Filedata]      
       if @photo.save
-        render :partial => 'photo', :object => @photo
+        render :text => "OK"
       else
-        render :text => "error"
+        render :text => "Nie mogłem dodać zdjęcia."
       end
     else
       # Standard upload

@@ -1,4 +1,10 @@
-%h1 New photo
+= javascript_include_tag "swfupload.js"
+= javascript_include_tag "swfupload.queue.js"
+= javascript_include_tag "fileprogress.js"
+= javascript_include_tag "handlers.js"  
+= javascript_include_tag "new_photo.js"  
+
+%h1 Dodaj zdjęcie
 
 = error_messages_for :photo
 
@@ -22,7 +28,14 @@
     %br
     or URL:
     = f.text_field :image_file_url
-
+  %div{:class => "fieldset flash", :id => "fsUploadProgress"}
+    %span{:class => "legend"}
+      Kolejka plików
+  %div{:id => "divStatus"}
+    0 plików wgranych
+  %div
+    %span{:id => "spanButtonPlaceHolder"}
+    %input{:id => "btnCancel", :type => "button", :value => "Zatrzymaj wgrywanie", :onclick => "swfu.cancelQueue();", :disabled => "disabled"}
   %p
     = f.submit "Create"
 

@@ -1,19 +1,21 @@
-%h1 Listing photos
+%h1 Wszystkie zdjęcia
 
 %table
   %tr
-    %th Title
+    %th Miniaturka
+    %th Tytuł
     %th Album
-    %th User
+    %th Użytkownik
 
   -for photo in @photos
     %tr
+      %td= image_tag photo_path(photo, :png)
       %td=h photo.title
       %td=h photo.album.title
       %td=h photo.user_id
 
-      %td= link_to 'Show', photo_path(photo)
-      %td= link_to 'Edit', edit_photo_path(photo)
-      %td= link_to 'Destroy', photo_path(photo), :confirm => 'Are you sure?', :method => :delete, :confirm => "Are you sure?", :method => :delete
+      %td= link_to 'Pokaż', photo_path(photo)
+      %td= link_to 'Edytuj', edit_photo_path(photo)
+      %td= link_to 'Usuń', photo_path(photo), :confirm => 'Are you sure?', :method => :delete, :confirm => "Are you sure?", :method => :delete
 
-= link_to 'New photo', new_photo_path
+= link_to 'Dodaj zdjęcie', new_photo_path

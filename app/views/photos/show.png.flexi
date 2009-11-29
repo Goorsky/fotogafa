@@ -1,3 +1,3 @@
 @photo.operate do |image|
-  image.shadow
+  image.resize '90x90', :crop => true
 end
