@@ -1,16 +1,17 @@
-%h1 Listing albums
+%h1 Albumy
 
 %table
   %tr
-    %th Parent
-    %th Title
-    %th Description
+    %th Rodzic
+    %th Tytuł
+    %th Zdjęć
 
   -for album in @albums
     %tr
       %td=h album.parent_id
       %td=h album.title
       %td=h album.description
+      %td=h album.photos.accepted.size
   
       %td= link_to 'Show', album_path(album)
       %td= link_to 'Edit', edit_album_path(album)

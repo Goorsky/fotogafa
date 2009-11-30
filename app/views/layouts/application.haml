@@ -1,7 +1,13 @@
 %html
   %head
-  %title
-    Fotogafa.pl
-  = stylesheet_link_tag "multi_upload"
+    %title
+      Fotogafa.pl
+    = javascript_include_tag :defaults
+    = stylesheet_link_tag "multi_upload" 
   %body
+    %div
+      = link_to "Albumy", albums_path
+      = link_to "Zdjęcia", photos_path
+      = link_to "Zdjęcia do akceptacji", waiting_photos_path
+    %div
     = yield

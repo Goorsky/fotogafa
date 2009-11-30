@@ -3,8 +3,13 @@
   =h @photo.title
 
 %p
+  %b
+    Status
+  =h @photo.status
+
+%p
   %b Album:
-  =h @photo.album.title
+  =#h @photo.album.title_check
 
 %p
   %b User:

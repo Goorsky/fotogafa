@@ -5,7 +5,7 @@ protect_from_forgery :except => :create
   # GET /photo
   # GET /photo.xml
   def index
-    @photos = Photo.find(:all)
+    @photos = Photo.find_all_by_status(1)
 
     respond_to do |format|
       format.html # index.haml

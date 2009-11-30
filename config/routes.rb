@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :albums
+  map.resources :waiting_photos
   map.resources :photos, :collection => { :create => :post }
   
 

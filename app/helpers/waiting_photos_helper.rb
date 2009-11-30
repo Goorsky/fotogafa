@@ -1,0 +1,2 @@
+module WaitingPhotosHelper
+end
