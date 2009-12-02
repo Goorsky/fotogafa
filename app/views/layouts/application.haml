@@ -9,5 +9,10 @@
       = link_to "Albumy", albums_path
       = link_to "Zdjęcia", photos_path
       = link_to "Zdjęcia do akceptacji", waiting_photos_path
+      - if current_user
+        = link_to "Wyloguj", logout_path
+      - else
+        = link_to "Rejestracja", new_user_path
+        = link_to "Logowanie", login_path
     %div
     = yield
