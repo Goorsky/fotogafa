@@ -1,0 +1,58 @@
+body {
+    background-image: url(/images/backgrounds/6.gif);
+    font-size: 14px;
+}
+
+.silver_box {
+    background-color: #232323;
+    border: 1px solid #424242;
+    width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+    padding: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.silver_box a {
+    color: #ABABAB;
+    padding: 10px;
+    text-decoration: none;
+    
+}
+
+.silver_box a:hover {
+    color: white;
+    text-decoration: none;
+    
+}
+
+.white_box {
+    background-color: white;
+    border: 0px;
+    width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+    padding: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.spacer {
+    height: 15px;
+}
+
+.spacer_small {
+    height: 5px;
+}
+
+.white_box a {
+    color: black;
+    text-decoration: none;
+}
+
+.white_box a:hover {
+    text-decoration: underline;
+} 
+
+.white_box a:visited{
+    color: black;
+}

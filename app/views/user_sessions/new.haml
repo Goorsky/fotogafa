@@ -1,20 +1,12 @@
-%h1 Login
+%h1 Zaloguj się
 
 = error_messages_for :user_session 
 
-- form_for(@user_session) do |f| 
-  %p
-    %b Username
-    %br
-    = f.text_field :username 
-  %p
-    %b Password
-    %br
-    = f.password_field :password 
-  %p
-    %b OpenID
+- form_for(@user_session) do |f|
+  %p 
+    %b zhrID
     %br
     = f.text_field :openid_identifier
   %p
-    = f.submit "Zaloguj"
+    = f.submit "loguj"
  

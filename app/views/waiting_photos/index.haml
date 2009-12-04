@@ -2,7 +2,7 @@
 
 %p
   Oczekujących: 
-  %b
+  %b   
 
 %table
   %tr
@@ -17,10 +17,10 @@
       %td=h photo.title
       %td=#h photo.album.title
       %td=h photo.user_id
-      
+    
       %td= link_to_remote 'Akceptuj', :url => {:controller => "accept_photo"}, :with => "'id='+#{photo.id.to_s}", :method => :get
       %td= link_to 'Odrzuć', photo_path(photo), :confirm => 'Are you sure?', :method => :delete, :confirm => "Are you sure?", :method => :delete
       %td= link_to 'Pokaż', photo_path(photo)
       %td= link_to 'Edytuj', edit_photo_path(photo)
 
-= link_to 'Dodaj zdjęcie', new_photo_path
+= link_to 'Dodaj zdjęcie', new_photo_path  
