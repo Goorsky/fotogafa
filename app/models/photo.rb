@@ -6,7 +6,8 @@ class Photo < ActiveRecord::Base
   named_scope :waiting, :conditions => { :status => 0 }
   
   before_create :set_exif
-
+  
+  #ustawia dane EXIF
   def set_exif
     self.title = self.image_file.get_exif_by_entry('ImageDescription')[0][1] 
     self.camera_model = self.image_file.get_exif_by_entry('Model')[0][1]

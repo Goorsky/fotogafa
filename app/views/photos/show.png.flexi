@@ -1,3 +1,16 @@
 @photo.operate do |image|
-  image.resize '90x90', :crop => true
+  image.resize '760x760'
+  image.shadow
+  image.text('fotogafa.pl',
+      :alignment => :bottom_right,
+      :offset => '20x20',
+      :antialias => true,
+      :color => 'white',
+      :font_size => 20,
+      :font => 'public/almago.ttf',
+      :shadow => {
+        :blur => 2,
+        :opacity => 0.5,
+      }
+    )
 end

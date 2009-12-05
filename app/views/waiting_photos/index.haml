@@ -13,7 +13,7 @@
 
   -for photo in @photos
     %tr{:id => photo.dom_id}
-      %td= image_tag photo_path(photo, :png)
+      %td= image_tag thumb_path(photo, :png)
       %td=h photo.title
       %td=#h photo.album.title
       %td=h photo.user_id
