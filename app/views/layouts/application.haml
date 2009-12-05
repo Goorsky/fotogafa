@@ -18,9 +18,8 @@
         = link_to "Rejestracja", new_user_path
         %div{:style => "float:right; margin-top: 4px;"}
           - form_for( UserSession.new) do |f| 
-            zhrID
-            = f.text_field :openid_identifier, :style => "border: 1px solid black; padding: 3px; width: 120px; background-color: silver;"
-            = f.submit "zaloguj", :disable_with => "trwa logowanie..."  
+            = f.text_field :openid_identifier, :value => "zhrID", :style => "border: 1px solid black; padding: 3px; width: 120px; background-color: silver;"
+            = f.submit "zaloguj", :disable_with => "trwa logowanie..."
         
     %div
       %div.spacer

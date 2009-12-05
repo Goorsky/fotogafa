@@ -37,6 +37,12 @@ ActiveRecord::Schema.define(:version => 20091202002832) do
 
   create_table "photos", :force => true do |t|
     t.string   "title"
+    t.string   "camera_company"
+    t.string   "camera_model"
+    t.string   "camera_software"
+    t.string   "author"
+    t.string   "copyright"
+    t.datetime "take_date"
     t.integer  "status"
     t.integer  "album_id"
     t.integer  "user_id"
