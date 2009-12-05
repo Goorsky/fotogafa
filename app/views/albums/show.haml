@@ -1,15 +1,20 @@
-%p
-  %b Parent:
-  =h @album.parent_id 
+%h1
+  = @album.title
 
 %p
-  %b Title:
-  =h @album.title 
-
+  - @album.parent_tree_to_array(Array.new).reverse.each do |album|
+    = link_to album.title, album_path(album.id)
+    >
 %p
-  %b Description:
-  =h @album.description 
-
-
-= link_to 'Edit', edit_album_path(@album)
-= link_to 'Back', albums_path
+  - unless @album.down?    
+    - @album.children.each do |album|
+      - if album.photos.size > 0
+        = link_to "#{image_tag thumb_path(album.photos.first, :png)}", album_path(album.id)
+        %br
+      = link_to album.title, album_path(album.id)      
+  - else
+    - @album.photos.each do |photo|
+      = photo.title
+      %br
+      = link_to "#{image_tag thumb_path(photo, :png)}", photo_path(photo.id) 
+      

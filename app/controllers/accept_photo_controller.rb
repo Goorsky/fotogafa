@@ -1,7 +1,8 @@
 class AcceptPhotoController < ApplicationController
 
   def index
-    Photo.find_by_id(params[:id]).accept!
+    @photo = Photo.find_by_id(params[:id])
+    @photo.accept!
     
     respond_to do |format|
       format.js {render :action => "accept"}

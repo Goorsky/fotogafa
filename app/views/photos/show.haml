@@ -1,3 +1,11 @@
+%h1
+  = @photo.album.title
+
+%p
+  - @photo.album.parent_tree_to_array(Array.new).reverse.each do |album|
+    = link_to album.title, album_path(album.id)
+    >
+
 %p
   %b Title:
   =h @photo.title
@@ -5,19 +13,26 @@
 %p
   %b
     Status
-  =h @photo.status
+  =h @photo.status_text
 
 %p
   %b Album:
   =#h @photo.album.title_check
+
+  = image_tag photo_path(@photo, :png)  
 
 %p
   %b User:
   =h @photo.user_id
 
 %p
-  = image_tag photo_path(@photo, :png)
+  %b Komentarze
+  - @photo.comments.each do |comment|
+    %div{:style => "border: 1px solid black; padding: 10px; -webkit-border-radius: 5px; "}
+      = comment.text
+    %br
 
 
-= link_to 'Edit', edit_photo_path(@photo)
-= link_to 'Back', photos_path
+
+= link_to 'Edytuj', edit_photo_path(@photo)
+= link_to 'Wszystkie', photos_path

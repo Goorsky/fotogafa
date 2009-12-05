@@ -92,6 +92,7 @@ protect_from_forgery :except => :create
 
     respond_to do |format|
       format.html { redirect_to(photos_url) }
+      format.js
       format.xml  { head :ok }
     end
   end

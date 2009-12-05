@@ -1,0 +1,5 @@
+@photo.operate do |image|
+  image.resize '120x120', :crop => true
+  image.shadow
+  #image.polaroid(10)
+end

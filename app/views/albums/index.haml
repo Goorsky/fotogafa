@@ -10,7 +10,13 @@
     %tr
       %td=h album.parent_id
       %td=h album.title
-      %td=h album.description
+      %td
+        - if album.top?
+          TOP
+        - elsif album.down?
+          DOWN
+        - else
+          ZAWIERA INNE
       %td=h album.photos.accepted.size
   
       %td= link_to 'Show', album_path(album)

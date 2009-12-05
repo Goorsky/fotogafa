@@ -1,6 +1,104 @@
+@import url(http://www.princexml.com/fonts/larabie/index.css) all;
+
+@font-face {
+  font-family: "Almago";
+  src: url(/almago.ttf) format("truetype");
+}
+
+
 body {
     background-image: url(/images/backgrounds/6.gif);
     font-size: 14px;
+    margin: 0px;
+    margin-bottom: 85px;
+}
+
+
+h1 {
+    font-family: "Sans-Serif";
+    font-size: 30px;
+}
+
+.loading {
+    position: fixed; 
+    bottom: 5px;
+    right: 20px; 
+    margin: 0px; 
+    opacity: 0.85;
+    padding: 5px;
+    -webkit-border-radius:5px;
+    border: 1px solid #424242;
+    background-color: #232323; 
+}
+
+.photo_navi {
+    position: fixed; 
+    bottom: 5px; 
+    margin: 0px; 
+    width: 100%; 
+    opacity: 0.85;
+}
+
+.photo_navi_buttons {
+    background-color: #232323; 
+    border: 1px solid #424242; 
+    width: 200px; 
+    margin: 0 auto; 
+    text-align: center; 
+    padding: 3px; 
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.photo_navi_buttons img {
+    border: 0px;
+}
+
+.photo_navi_buttons a {
+    opacity: 0.5;
+}
+
+.photo_navi_buttons a:hover {
+    opacity: 1.0;
+}
+
+#header {
+	height: 53px;
+	z-index: 99;
+	width: 100%;
+	position: fixed;
+	background: url(http://static.tumblr.com/j8lh0bq/XkRksqvoi/topbar.png) repeat-x top left;
+}
+ 
+#header h1 {
+	font-family:Almago;
+	text-shadow: 0 1px 1px rgba(255,255,255,0.4);
+}
+ 
+.header-left {
+	float: left;
+	display: inline;
+	width: 500px;
+}
+ 
+.header-right {
+	float: right;
+	display: inline;
+	width: 330px;
+	text-align: right;
+}
+ 
+#header h1 a {
+	color: #333;
+}
+ 
+#header h1 a:hover {
+	color: #444;
+}
+
+
+.clear {
+    clear:both;
 }
 
 .silver_box {
@@ -11,6 +109,11 @@ body {
     opacity: 0.9;
     padding: 10px;
     -webkit-border-radius: 10px;
+    font-family: "Prime Minister of Canada"; 
+}
+
+.silver_box h1 {
+    font-size: 40px;
 }
 
 .silver_box a {
@@ -31,7 +134,7 @@ body {
     border: 0px;
     width: 960px;
     margin: 0 auto;
-    opacity: 0.9;
+    opacity: 1;
     padding: 10px;
     -webkit-border-radius: 10px;
 }
