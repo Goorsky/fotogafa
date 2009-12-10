@@ -7,7 +7,7 @@
       :antialias => true,
       :color => 'white',
       :font_size => 20,
-      :font => 'public/fonts/almago.ttf',
+      :font => 'public/almago.ttf',
       :shadow => {
         :blur => 2,
         :opacity => 0.5,
