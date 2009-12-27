@@ -5,6 +5,7 @@ window.onload = function() {
 		flash_url : "../swf/swfupload.swf",
 		upload_url: "/photos/create",
 		//post_params: {"PHPSESSID" : "<?php echo session_id(); ?>"},
+		//post_params: {"album_id" : 2},
 		file_size_limit : "100 MB",
 		file_types : "*.*",
 		file_types_description : "All Files",

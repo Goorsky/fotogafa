@@ -11,7 +11,9 @@ class Photo < ActiveRecord::Base
   named_scope :accepted, :conditions => { :status => 1 }
   named_scope :waiting, :conditions => { :status => 0 }
   
-  before_create :set_exif
+  #validates_presence_of :album_id, :message => "zdjęcie musi być przyporządkowane do albumu"
+  
+  before_create :set_exif, :set_status
   
   #ustawia dane EXIF
   def set_exif
@@ -23,12 +25,15 @@ class Photo < ActiveRecord::Base
     self.author = self.image_file.get_exif_by_entry('Artist')[0][1] 
     self.copyright = self.image_file.get_exif_by_entry('Copyright')[0][1] 
   end  
+  
+  def set_status
+    self.status = 0
+  end  
 
   #naprawia mime-types
   def swfupload_file=(data)
     data.content_type = MIME::Types.type_for(data.original_filename).to_s
     self.image_file = data
-    self.status = 0
   end
   
   #zatwierdza zdjecie

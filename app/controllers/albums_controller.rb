@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+
   # GET /Album
   # GET /Album.xml
   def index
@@ -17,6 +18,7 @@ class AlbumsController < ApplicationController
 
     respond_to do |format|
       format.html # show.haml
+      format.png
       format.xml  { render :xml => @album }
     end
   end

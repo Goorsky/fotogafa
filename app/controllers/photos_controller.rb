@@ -48,6 +48,7 @@ protect_from_forgery :except => :create
     # SWFUpload file
     if params[:Filedata]
       @photo = Photo.new(:swfupload_file => params[:Filedata])
+      @photo.album_id = params[:album_id]
       #@photo = Photo.new
       #@photo.image_file = params[:Filedata]      
       if @photo.save

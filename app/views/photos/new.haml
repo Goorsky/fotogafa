@@ -8,35 +8,47 @@
 
 = error_messages_for :photo
 
+%div{:style => "margin: 10px; font-size: 14px;"}
+  = link_to_function "Kilka", "$('tab_two').hide(); $('tab_one').show(); $('tab_three').hide();"
+  = link_to_function "Pojedyńczo", "$('tab_one').hide(); $('tab_two').show(); $('tab_three').hide();"
+  = link_to_function "z URL", "$('tab_one').hide(); $('tab_two').hide(); $('tab_three').show();"
+
 - form_for @photo, :html => { :multipart => true } do |f|
-  %p
-    %b Title
-    %br
-    = f.text_field :title
-  %p
-    %b Album
-    %br
-    = f.select :album_id, @albums.collect { |c| [c.title, c.id] }
-  %p
-    %b User
-    %br
-    = f.text_field :user_id
-  %p
-    %b Upload
-    %br
-    = f.file_field :image_file
-    %br
-    or URL:
-    = f.text_field :image_file_url
-  %div{:class => "fieldset flash", :id => "fsUploadProgress"}
-    %span{:class => "legend"}
-      Kolejka plików
-  %div{:id => "divStatus"}
-    0 plików wgranych
   %div
-    %span{:id => "spanButtonPlaceHolder"}
-    %input{:id => "btnCancel", :type => "button", :value => "Zatrzymaj wgrywanie", :onclick => "swfu.cancelQueue();", :disabled => "disabled"}
-  %p
-    = f.submit "Create"
+    %p
+      %b Album
+      %br
+      = f.select :album_id, @albums.collect { |c| [c.title, c.id] }
+  
+  #tab_one
+    %div{:class => "fieldset flash", :id => "fsUploadProgress"}
+      %span{:class => "legend"}
+        Kolejka plików
+    %div{:id => "divStatus"}
+      0 plików wgranych
+    %div
+      %span{:id => "spanButtonPlaceHolder"}
+      %input{:id => "btnCancel", :type => "button", :value => "Zatrzymaj wgrywanie", :onclick => "swfu.cancelQueue();", :disabled => "disabled"}
+  #tab_two{:style => "display: none;"}
+    %p
+      %b Tytuł
+      %br
+      = f.text_field :title
+    %p
+      %b Upload
+      %br
+      = f.file_field :image_file
+    %p
+      = f.submit "Dodaj"
+  #tab_three{:style => "display: none;"}
+    %p
+      %b Tytuł
+      %br
+      = f.text_field :title
+    %p
+      URL:
+      = f.text_field :image_file_url
+    %p
+      = f.submit "Dodaj"
 
 = link_to 'Back', photos_path

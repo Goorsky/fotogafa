@@ -8,13 +8,24 @@
 %p
   - unless @album.down?    
     - @album.children.each do |album|
-      - if album.photos.size > 0
-        = link_to "#{image_tag thumb_path(album.photos.first, :png)}", album_path(album.id)
-        %br
-      = link_to album.title, album_path(album.id)      
+      %h2
+        = album.title
+      %p  
+        = link_to "#{image_tag album_path(album.id, :png)}", album_path(album.id)     
+      %p
+        %i
+          = album.description
   - else
     - @album.photos.each do |photo|
       = photo.title
       %br
       = link_to "#{image_tag thumb_path(photo, :png)}", photo_path(photo.id) 
+%p
+  %b
+    Operacje
+  %br
+  - unless @album.photos.size > 0
+    = link_to "Dodaj tutaj album", new_album_path
+  - if @album.down?
+    = link_to "Dodaj tutaj zdjęcia", new_photo_path
       

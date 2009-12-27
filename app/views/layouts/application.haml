@@ -7,7 +7,7 @@
   %body
     .loading{:id => "loading"}
       = image_tag 'icons/loading.gif'
-    - if controller_name == "photos" && controller.action_name != "index"
+    - if controller_name == "photos" && controller.action_name == "show"
       .photo_navi
         .photo_navi_buttons
           - if @photo.prev
@@ -27,9 +27,13 @@
       - else
         = link_to "Rejestracja", new_user_path
         %div{:style => "float:right; margin-top: 4px;"}
-          - form_for( UserSession.new) do |f| 
-            = f.text_field :openid_identifier, :value => "zhrID", :style => "border: 1px solid black; padding: 3px; width: 120px; background-color: silver;"
-            = f.submit "zaloguj", :disable_with => "trwa logowanie..."
+          - form_for( UserSession.new) do |f|
+            %div{:style =>  "font-family: Verdana; background-color: white; border: 2px solid black; height: 28px; width: 225px; "}
+              %div{:style => "background-color: black; height: 20px; border: 0px; float: left; color: white; margin-right: 3px; padding: 5px;"}
+                zhrID
+              = f.text_field :openid_identifier, :style => "border: 0px solid black; padding: 3px; width: 100px; background-color: white; font-size: 14px; margin-right: 2px; float: left;"            
+              %div{:style => "float: right;"}  
+                = f.submit "loguj", :disable_with => "loguję...", :style => 'background-color:white; border: 2px solid #5FB404; height: 22px; color: #5FB404; font-weight: bold; margin: 3px; width: 65px; -webkit-border-radius: 5px;'
         
     %div
       %div.spacer

@@ -1,4 +1,10 @@
 class Album < ActiveRecord::Base
+  acts_as_fleximage :image_directory => 'photos' do
+    image_storage_format :jpg
+    preprocess_image do |image|
+      image.resize '1000x1000'
+    end
+  end
   has_many   :photos
   belongs_to :parent, :class_name => "Album"
   has_many   :children, :class_name => "Album", :foreign_key => "parent_id"

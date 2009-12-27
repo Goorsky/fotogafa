@@ -102,9 +102,9 @@ h1 {
 }
 
 .silver_box {
-    background-color: #232323;
+    background-color: silver;
     border: 1px solid #424242;
-    width:  960px;
+    min-width:  960px;
     margin: 0 auto;
     opacity: 0.9;
     padding: 10px;
